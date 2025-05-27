@@ -3,16 +3,25 @@
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",
-    "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ intmax-mining-subgraph",
-    "create-local": "graph create --node http://localhost:8020/ intmax-mining-subgraph",
-    "remove-local": "graph remove --node http://localhost:8020/ intmax-mining-subgraph",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 intmax-mining-subgraph",
+    "build:legacy": "graph build --network mainnet --network-file networks/legacy.json",
+    "build:stage": "graph build --network base-sepolia --network-file networks/stage.json",
+    "build:prod": "graph build --network base --network-file networks/prod.json",
+    "create:legacy": "graph create --node http://localhost:8020/ legacy-int1",
+    "create:stage": "graph create --node http://localhost:8020/ stage-int1",
+    "create:prod": "graph create --node http://localhost:8020/ prod-int1",
+    "remove:legacy": "graph remove --node http://localhost:8020/ legacy-int1",
+    "remove:stage": "graph remove --node http://localhost:8020/ stage-int1",
+    "remove:prod": "graph remove --node http://localhost:8020/ prod-int1",
+    "deploy:legacy": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 stage-int1 --network mainnet --network-file networks/legacy.json",
+    "deploy:stage": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 stage-int1 --network base-sepolia --network-file networks/stage.json",
+    "deploy:prod": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 prod-int1 --network base --network-file networks/prod.json",
     "test": "graph test"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.97.0",
     "@graphprotocol/graph-ts": "0.37.0"
   },
-  "devDependencies": { "matchstick-as": "0.6.0" }
+  "devDependencies": {
+    "matchstick-as": "0.6.0"
+  }
 }
