@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: Int1L
-    network: {{ network }}
+    network: base
     source:
-      address: {{ address }}
       abi: Int1L
-      startBlock: {{ startBlock }}
+      address: "0x195F9b5F42435bB71E9765E66a9bdFE40d44A895"
+      startBlock: 21218179
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
@@ -34,7 +34,8 @@ dataSources:
           handler: handleDepositCanceled
         - event: DepositLeafInserted(indexed uint32,indexed bytes32)
           handler: handleDepositLeafInserted
-        - event: Deposited(indexed uint256,indexed address,indexed bytes32,uint32,uint256,uint256)
+        - event: Deposited(indexed uint256,indexed address,indexed
+            bytes32,uint32,uint256,uint256)
           handler: handleDeposited
         - event: DepositsAnalyzedAndProcessed(indexed uint256,uint256[],bytes32[])
           handler: handleDepositsAnalyzedAndProcessed
