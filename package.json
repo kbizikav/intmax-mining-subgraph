@@ -12,7 +12,7 @@
     "remove:legacy": "graph remove --node http://localhost:8020/ legacy-int1",
     "remove:stage": "graph remove --node http://localhost:8020/ stage-int1",
     "remove:prod": "graph remove --node http://localhost:8020/ prod-int1",
-    "deploy:legacy": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 stage-int1 --network mainnet --network-file networks/legacy.json",
+    "deploy:legacy": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 legacy-int1 --network mainnet --network-file networks/legacy.json",
     "deploy:stage": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 stage-int1 --network base-sepolia --network-file networks/stage.json",
     "deploy:prod": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 prod-int1 --network base --network-file networks/prod.json",
     "test": "graph test"
